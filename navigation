@@ -1,0 +1,55 @@
+<script>
+
+var firstClick = true;
+var lastClick = "";
+document.addEventListener('keydown', function(event) {
+  switch (event.key) {
+    case "ArrowLeft":
+      if(firstClick){
+        document.getElementById("leftButton").click();
+        lastClick = "ArrowLeft";
+        firstClick = false;
+      }else if(lastClick === "ArrowRight"){
+        document.getElementById("HomeFromRight").click();
+        lastClick = "";
+        firstClick = true;
+      }
+      break;
+    case "ArrowRight":
+      if(firstClick){
+        document.getElementById("rightButton").click();
+        lastClick = "ArrowRight";
+        firstClick = false;
+      }else if(lastClick === "ArrowLeft"){
+        document.getElementById("HomeFromLeft").click();
+        lastClick = "";
+        firstClick = true;
+      }
+      break;
+    case "ArrowUp":
+      if(firstClick){
+        document.getElementById("upButton").click();
+        lastClick = "ArrowUp";
+        firstClick = false;
+      }else if(lastClick === "ArrowDown"){
+        document.getElementById("HomeFromDown").click();
+        lastClick = "";
+        firstClick = true;
+      }
+      break;
+    case "ArrowDown":
+      if(firstClick){
+        document.getElementById("downButton").click();
+        lastClick = "ArrowDown";
+        firstClick = false;
+      }else if(lastClick === "ArrowUp"){
+        document.getElementById("HomeFromUp").click();
+        lastClick = "";
+        firstClick = true;
+      }
+      break;
+  }
+});
+
+
+</script>
